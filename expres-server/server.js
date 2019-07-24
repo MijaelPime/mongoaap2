@@ -3,10 +3,14 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 const mongose = require('mongoose');
+const cors = require("cors");
 
-const api = require("./api");
+app.use('/',express.static('../cliente'));
+app.use(cors());
 
-app.use('/api',api);
+const api = require("./api"); //traigo todo de la carpeta api
+
+app.use('/api',api); //app.use es un middleware, cualquier peticion la delego a index.js en este caso.
 
 app.listen(process.env.PORT, function(){
     console.log(`inicia el servidor:${process.env.PORT}`);
