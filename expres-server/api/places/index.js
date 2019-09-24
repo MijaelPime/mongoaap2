@@ -19,3 +19,15 @@ router.put('/:id',putPlaces);
 router.delete('/:id',deletePlaces);
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
